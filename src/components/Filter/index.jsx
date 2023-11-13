@@ -1,6 +1,8 @@
+import { FilterWrapper } from './Filter.styled';
+
 const Filter = ({ filter, onChange }) => {
   return (
-    <div>
+    <FilterWrapper>
       <label htmlFor="inputFindName">Find contacts by name</label>
       <input
         name="filter"
@@ -9,7 +11,7 @@ const Filter = ({ filter, onChange }) => {
         value={filter}
         onChange={onChange}
       />
-    </div>
+    </FilterWrapper>
   );
 };
 

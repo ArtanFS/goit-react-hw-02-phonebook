@@ -17,14 +17,14 @@ export class App extends Component {
   };
 
   addContact = newContact => {
-    const contasctNames = [];
-    for (const contact of this.state.contacts) {
-      contasctNames.push(contact.name);
-    }
-    if (contasctNames.includes(newContact.name)) {
+    const isDuplicate = this.state.contacts.some(
+      ({ name }) => newContact.name === name
+    );
+    if (isDuplicate) {
       alert(`${newContact.name} is already in contacts.`);
       return;
     }
+
     const contactObj = {
       id: nanoid(),
       ...newContact,
